@@ -59,6 +59,13 @@ pub const unwinder_private_data_size: usize = 20;
 #[cfg(all(target_arch = "hexagon", target_os = "linux"))]
 pub const unwinder_private_data_size: usize = 35;
 
+/* The C++ ABI requires exception_class, private_1, and private_2 to
+   be of type uint64 and the entire structure to be
+   double-word-aligned. Please note that exception_class stays 64-bit
+   even on 32-bit machines for gcc compatibility.  */
+#[cfg(target_arch = "riscv32")]
+pub const unwinder_private_data_size: usize = 4;
+
 #[repr(C)]
 pub struct _Unwind_Exception {
     pub exception_class: _Unwind_Exception_Class,

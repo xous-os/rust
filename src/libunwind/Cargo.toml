@@ -17,7 +17,7 @@ doc = false
 
 [dependencies]
 core = { path = "../libcore" }
-libc = { version = "0.2.51", features = ['rustc-dep-of-std'], default-features = false }
+libc = { version = "0.2.51", features = ['rustc-dep-of-std'], default-features = false, git = "https://github.com/xous-os/libc.git", rev = "42645690499e72cba2fa51e0b64fe704b3998e14" }
 compiler_builtins = "0.1.0"
 cfg-if = "0.1.8"
 

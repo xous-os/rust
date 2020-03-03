@@ -70,5 +70,10 @@ rustc-std-workspace-core = { path = 'src/tools/rustc-std-workspace-core' }
 rustc-std-workspace-alloc = { path = 'src/tools/rustc-std-workspace-alloc' }
 rustc-std-workspace-std = { path = 'src/tools/rustc-std-workspace-std' }
 
+# Xous-specific patches
+dlmalloc = { git = 'https://github.com/xous-os/dlmalloc-rs.git', rev = '430815940214d18f575243a1c9c8ba7b1ea794cd' }
+backtrace-sys = { git = 'https://github.com/xous-os/backtrace-rs.git', rev = 'f00538ab0e5a800c431bc620a30491931ad90838' }
+libc = { git = 'https://github.com/xous-os/libc.git', rev = "42645690499e72cba2fa51e0b64fe704b3998e14" }
+
 [patch."https://github.com/rust-lang/rust-clippy"]
 clippy_lints = { path = "src/tools/clippy/clippy_lints" }
